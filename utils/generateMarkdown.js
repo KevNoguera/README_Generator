@@ -50,7 +50,48 @@ const currentYear = new Date().getFullYear();
 function generateMarkdown(data) {
   return `# ${data.title}
 
-`;
-}
+  ${renderLicenseBadge(data.license)}
 
-export default generateMarkdown;
+  ${renderLicenseSection(data.license)}
+  
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+   - [Installation](#installation)
+   - [Usage](#usage)
+   - [License](#license)
+   - [Contributing](#contributing)
+   - [Tests](#tests)
+  - [Questions](#questions)
+  
+  ## Installation
+  ${data.installation}
+
+ \`\`\`
+ ${data.code}
+ \`\`\`
+  
+  ## Usage
+  ${data.usage}
+
+  
+  ## Contributing
+  ${data.contributing}
+  
+  ## Tests
+  ${data.tests}
+  
+  ## Questions
+  If you have any questions, please contact me at: 
+  
+  GitHub: [${data.github}](https://github.com/${data.github})
+
+  Email: ${data.email}
+
+  © ${currentYear} ${data.github}. All Rights Reserved.
+
+  `;
+  }
+  
+  export default generateMarkdown;
